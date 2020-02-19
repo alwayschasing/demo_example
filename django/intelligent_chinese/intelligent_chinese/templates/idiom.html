@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>Intelligent Chinese</title>
+<meta charset="utf-8">
+<body>
+<form class="formbox" action="/search_idioms" method="GET">
+    <input type="text" class="query" id="query" name="describe" placeholder="请输入查询描述">
+    <input type="button" class="submitBtn" id="submitBtn" value="提交" />
+</form>
+<div class="idioms">
+    <h4>target idioms</h4>
+    <div>
+        {% if idioms %}
+            {% for idiom in idioms %}
+            <kbd>{{ idiom }}
+            <br>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+<div>
+    {% if error %}
+        <h5>
+            {{ error }}
+        </h5>
+    {% endif %}
+</div>
+</body>
+</html>
